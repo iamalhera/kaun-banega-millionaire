@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    --primary-color: #020230;
+}
+
+.content {
+    height: 100vh;
+    display: flex;
+    background: var(--primary-color);
+    color: white;
+}
+
+.main {
+    width: 75%;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), var(--primary-color)), url("../public/assets/kbm-bg.jpg");
+    background-position: center center;
+    display : flex ;
+    flex-direction : column ;
+}
+.top{
+    height: 50%;
+    position : relative ; 
+}
+.bottom{
+    height: 50%;
+}
+.current-user{
+    margin : 10px ;
+    font-weight: 500;
+    font-size : 1.2rem;
+    cursor: pointer;
+}
+.quiz-container{
+    height: 100% ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.question{
+    width : 80% ;
+    background : linear-gradient(rgb(56, 2, 127), black) ;
+    border : 2px solid white;
+    text-align: center;
+    padding: 1rem;
+    border-radius : .5rem ;
+    font-size: 1.3rem;
+}
+.answers{
+    width : 80% ;
+    display: flex;
+    justify-content: center;
+    flex-wrap : wrap ;
+}
+.answer{
+    width : 47% ;
+    padding: 0.4rem;
+    text-align: center;
+    background : linear-gradient(#0e0124, #22074d) ;
+    border : 1px solid white ;
+    border-radius: 0.75rem;
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin :  10px 20px 10px 0 ;
+    cursor : pointer ;
+}
+.answer:hover,
+.answer.active{
+    background: mediumblue;
+}
+.answer.correct{
+    animation: correct 3s ease forwards;
+}
+@keyframes correct{
+    0%,22%,42%{
+        background: mediumblue;
+    }
+    20%,40%,60%{
+        background : linear-gradient(#0e0124, #22074d) ;
+
+    }
+    62%,100%{
+        background: green;
+    }
+}
+.answer.wrong{
+    animation: wrong 3s ease forwards;
+}
+@keyframes wrong{
+    0%,22%,42%{
+        background: mediumblue;
+    }
+    20%,40%,60%{
+        background : linear-gradient(#0e0124, #22074d) ;
+
+    }
+    62%,100%{
+        background: crimson;
+    }
+}
+.timer{
+    width : 70px ;
+    height : 70px ;
+    border-radius: 50%;
+    border: 5px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size : 1.5rem ;
+    font-weight: 700;
+    position : absolute ;
+    bottom : 0.5rem ;
+    left : 4rem ;
+    
+}
+.pyramid {
+    width: 25%;
+    display : flex ;
+    align-items: center ;
+    justify-content: center;
+}
+.money-list{
+    list-style: none;
+    width : 100% ;
+    padding : 1rem ;
+}
+.money-list-item{
+    display: flex ;
+    align-items : center ;
+    padding : 0.1rem 2rem ;
+    border-radius : 5px ;
+}
+.money-list-item.active{
+    background-color : teal ;
+}
+.money-list-item-number{
+    font-size : 1rem ;
+    font-weight : 100 ;
+    width : 10% ;
+}
+.money-list-item-amount{
+    font-size : 1.2rem ;
+    font-weight: 300 ;
+    margin-left: 1rem ;
+}
+
+.endText{
+    font-size: 2rem;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left : 0 ;
+    right : 0 ;
+    margin : auto ;
+}
+.start-container{
+    width : 300px ;
+    height : 100px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around ;
+    position: relative;
+    margin-top : 100px ;
+    top: 0;
+    bottom: 0;
+    left : 0 ;
+    right : 0 ;
+    margin : auto ;
+}
+.start-input{
+    width : 100% ;
+    height : 30px ;
+    border : none ;
+    border-radius: 5px ;
+    text-align: center ;
+    font-size: 1.2rem ;
+}
+.start-input:focus{
+    outline : none ;
+}
+.start-button{
+    width : 100% ;
+    height : 30px ;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size : 1.1rem ;
+    font-weight: 500;
+
+}
